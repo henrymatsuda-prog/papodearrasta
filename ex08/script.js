@@ -1,18 +1,15 @@
-function calcularMedia() {
-    let nota1 = Number(document.getElementById("nota1").value);
-    let nota2 = Number(document.getElementById("nota2").value);
+function validarCampo() {
+    let nome = document.getElementById("nome").value.trim();
+    let mensagem = "";
 
-    let media = (nota1 + nota2) / 2;
-    let situacao = "";
-
-    if (media >= 7) {
-        situacao = "Aprovado";
-    } else if (media >= 5) {
-        situacao = "Recuperação";
+    if (nome === "") {
+        mensagem = "O campo nome está vazio.";
+    } else if (nome.length < 3) {
+        mensagem = "Digite pelo menos 3 caracteres.";
     } else {
-        situacao = "Reprovado";
-}
-
-    document.getElementById("resultado").innerText =
-        "Média: " + media + " - Situação: " + situacao;
-}
+        mensagem = "Campo preenchido corretamente!";
+    }
+        
+    document.getElementById("mensagem").innerText = "Mensagem: " + mensagem;
+     "Mensagem: " + mensagem;
+}   
